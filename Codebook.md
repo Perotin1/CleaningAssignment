@@ -1,6 +1,6 @@
 # Codebook for run_analysis.R and UCI_HAR_summary.txt
 
-#### Source Dataset:
+### Source Dataset:
 
 Full Source Dataset, README, and Codebooks available at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -49,25 +49,25 @@ X_train.txt, y_train.txt, subject_train.txt, X_test.txt, y_test.txt, subject_tes
 When run_analysis() is called, it: installs, where necessary, and then sources the package "reshape"; creates a tidy data set and writes it to UCI_HAR_summary.txt, in the working directory, using write.table with row.names = FALSE and default parameters otherwise.
 
 Process: 
-1. merges X_train and X_test data sets X together, adds a variable for activity from y_train and y_test which takes descriptive values from activity_labels.txt, and a variable for subject from subject_train and subject_test, and labels columns for all the feature variables using features.txt
+1. It merges X_train and X_test data sets X together, adds a variable for activity from y_train and y_test which takes descriptive values from activity_labels.txt, and a variable for subject from subject_train and subject_test, and labels columns for all the feature variables using features.txt
 2. creates a new dataset with only the variables relating to the mean and standard deviation of each measurement. From the Source Dataset codebook features_info.txt, we determined the measurements to be:
-..*tBodyAcc-XYZ
-..*tGravityAcc-XYZ
-..*tBodyAccJerk-XYZ
-..*tBodyGyro-XYZ
-..*tBodyGyroJerk-XYZ
-..*tBodyAccMag
-..*tGravityAccMag
-..*tBodyAccJerkMag
-..*tBodyGyroMag
-..*tBodyGyroJerkMag
-..*fBodyAcc-XYZ
-..*fBodyAccJerk-XYZ
-..*fBodyGyro-XYZ
-..*fBodyAccMag
-..*fBodyAccJerkMag
-..*fBodyGyroMag
-..*fBodyGyroJerkMag
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
 	
 where prefixes f- and t- denote frequency and time derived variables, the suffix -XYZ indicates a distinct measurement for the X, Y, and Z direction for each observation i.e. a distinct variable, and Body, Gravity, Accel, Gyro denote variables as referring to body motion and gravity, and the acceleration and angular velocity due to those respectively. The derivation of these variables is more completely specified in features_info.txt in the Source Data directory. The mean and standard deviation variables of these measurements are denoted by elements which contain -mean() and -sd() in features.txt. A variable meanFreq() is also calculated for frequency-derived variables, but we considered this not a recognisable mean of any of these measurements, so run_analysis.r does not include any -meanFreq() variables. So these 66 variables are extracted to a separate data frame, along with subject and activity index columns.
 3. takes the average of every subset formed by a subject-activity pair of each mean and each standard deviation variable i.e. 30 subjects * 6 activities = 180 averages of each variable

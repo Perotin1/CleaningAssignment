@@ -30,6 +30,6 @@ The Tidy Data Set
 #### Codebook.md 
 A codebook that describes the process that run_analysis.R takes to produce UCI_HAR_summary.txt, its interactions with the source data, the structure of UCI_HAR_summary.txt, and the Source Data as it relates to the tidy data.
 
-#### What to include in the README and codebook was based on:
+#### What information was included in the README versus the codebook was based on:
 1. "How to Share Data with a Statistician", Jeff Leek, 2013 (http://blogs.biomedcentral.com/bmcblog/2013/11/26/how-to-share-data-with-a-statistician/)
 2. "Create a Codebook", The Data Documentation Initiative Alliance (http://www.ddialliance.org/training/getting-started-new-content/create-a-codebook)

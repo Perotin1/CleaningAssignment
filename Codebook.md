@@ -1,4 +1,4 @@
-# Codebook for run_analysis.R and UCI_HAR_summary.txt
+# Codebook for UCI_HAR_summary.txt
 
 ### Source Dataset:
 
@@ -25,16 +25,18 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
+The README describes the method for choosing the variables from the feature vectors and summarizing them to arrive at the measurement choice and average values given in UCI_HAR_summary.txt.
+
 Full Information on the Source Dataset as a whole can be found using the README included with it, when sourced from the link above.
 
 ### This codebook will discuss the aspects of the Source Data that relate to the summarizing script and the tidy summary data.
 
 ## UCI_HAR_summary.txt:
-The Dataset has 4 columns: activity; subject_number; measurement; average_value. It is sorted by activity and then by subject_number.
+The Dataset has 4 columns: activity; subject_number; measurement; average_value. It is sorted by activity and then by ascending subject_number.
 
 ##### activity: 
 
-The activity subject was observed performing during averaged observations. Takes 6 unique values: laying; sitting; standing; walking; walking_downstairs; walking_upstairs
+The activity subject was observed performing during averaged observations. Takes 6 unique values, and the dataset is sorted in the order given here: laying; sitting; standing; walking; walking_downstairs; walking_upstairs
 
 ##### subject_number: 
 
@@ -42,7 +44,7 @@ Which subject was observed for the averaged observations. Takes unique values in
 
 ##### measurement: 
 
-Which measurement was averaged across observations of an activity-subject pairing. Takes values:
+Which Normalized measurement was averaged across observations of an activity-subject pairing. Takes values:
 tBodyAcc-mean()-X;
 tBodyAcc-mean()-Y;
 tBodyAcc-mean()-Z;

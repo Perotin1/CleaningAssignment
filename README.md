@@ -60,4 +60,4 @@ where prefixes f- and t- denote frequency and time derived variables, the suffix
 The Tidy Data Set
 
 #### Codebook.md 
-A codebook that describes the process that run_analysis.R takes to produce UCI_HAR_summary.txt, its interactions with the source data, the structure of UCI_HAR_summary.txt, and the Source Data as it relates to the tidy data.
+A codebook that describes the structure of UCI_HAR_summary.txt, and the Source Data as it relates to the tidy data.
